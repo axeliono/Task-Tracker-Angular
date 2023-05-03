@@ -1,0 +1,43 @@
+<form class="add-form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="text">Task</label>
+    <input
+      type="text"
+      formControlName="text"
+      id="text"
+      placeholder="Add Task"
+    />
+  </div>
+  <div class="date-time">
+    <div class="form-control date">
+      <div class="form-group">
+        <label for="datepicker">Date</label>
+        <input
+          type="text"
+          formControlName="day"
+          id="datepicker"
+          [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
+          placeholder="Click to Select Date"
+          bsDatepicker
+          (bsValueChange)="onValueChange($event)"
+        />
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="time">Time</label>
+      <timepicker
+        type="text"
+        formControlName="time"
+        id="time"
+        placeholder="Click to Select Time"
+      >
+      </timepicker>
+    </div>
+  </div>
+
+  <div class="form-control form-control-check">
+    <label for="reminder">Set Reminder</label>
+    <input type="checkbox" formControlName="reminder" id="reminder" />
+  </div>
+  <input type="submit" value="Save Task" class="btn btn-block" />
+</form>

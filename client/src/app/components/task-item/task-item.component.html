@@ -1,0 +1,21 @@
+<div
+  class="task spacing"
+  [ngClass]="{ reminder: task.reminder }"
+  (dblclick)="onToggle(task)"
+>
+  <div>
+    <h3>
+      {{ task.text }}
+    </h3>
+    <p>
+      {{ task.day }} at {{ task.time}}
+    </p>
+  </div>
+  <div>
+    <fa-icon
+      (click)="onDelete(task)"
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTimes"
+    />
+  </div>
+</div>
