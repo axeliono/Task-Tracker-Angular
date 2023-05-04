@@ -7,6 +7,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -32,6 +33,7 @@ import { AddTaskComponent } from './components/add-task/add-task.component';
     TimepickerModule,
     BsDatepickerModule.forRoot(),
     CollapseModule,
+    BrowserAnimationsModule,
   ],
   providers: [BsDatepickerConfig],
   bootstrap: [AppComponent],

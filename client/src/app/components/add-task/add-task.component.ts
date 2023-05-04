@@ -12,6 +12,7 @@ import {
   FormControl,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { Renderer2, RendererFactory2 } from '@angular/core';
 import { Task } from '../../Models/Task';
 
 @Component({
@@ -24,9 +25,13 @@ export class AddTaskComponent implements OnInit {
   day: Date = new Date();
   time: Date = new Date();
   bsValue = new Date();
+
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter<Task>();
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private rendererFactory: RendererFactory2
+  ) {}
 
   ngOnInit(): void {
     this.taskForm = this.formBuilder.group({
@@ -37,26 +42,23 @@ export class AddTaskComponent implements OnInit {
     });
   }
 
-  onValueChange(value: any): void {
-    console.log(value);
-  }
-
   onSubmit() {
     if (!this.taskForm.valid) {
       alert('Please correct the required fields');
       return;
     }
 
-    var time = new Date(this.taskForm.controls['time'].value)
-      .getTime()
-      .toString();
-    var day = new Date(this.taskForm.controls['day'].value).toDateString();
+    var time = new Date(this.taskForm.controls['time'].value);
+    var day = new Date(this.taskForm.controls['day'].value);
 
+    const hours = time.getHours();
+    const minutes = time.getMinutes();
+    day.setHours(hours, minutes);
+    console.log(day);
     const newTask = {
       text: this.taskForm.value.text.trim(),
-      day: day,
+      date: day,
       reminder: this.taskForm.value.reminder,
-      time: time,
     };
 
     this.onAddTask.emit(newTask);

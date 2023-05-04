@@ -11,15 +11,22 @@ export class TaskItemComponent {
   @Input() task: Task = {
     id: 0,
     text: '',
-    day: '',
     reminder: false,
-    time: '',
+    date: new Date(),
   };
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
+  finalTime: string = '';
   faTimes = faTimes;
 
+  ngOnInit(): void {
+    var date = new Date(this.task.date);
+    var time = date.toLocaleDateString();
+    var day = date.toLocaleTimeString();
+    this.finalTime = `${day} at ${time}`;
+    console.log(this.finalTime);
+  }
   onDelete(task: Task) {
     this.onDeleteTask.emit(task);
   }

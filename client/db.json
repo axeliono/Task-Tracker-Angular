@@ -3,19 +3,19 @@
     {
       "id": 1,
       "text": "Doctors Appointment",
-      "day": "May 5th at 2:30pm",
+      "date": "2012-04-30T02:15:12.356Z",
       "reminder": false
     },
     {
       "id": 2,
       "text": "Meeting at School",
-      "day": "May 6th at 1:30pm",
+      "date": "2012-04-30T02:15:12.356Z",
       "reminder": true
     },
     {
       "id": 3,
       "text": "Food Shopping",
-      "day": "May 7th at 12:30pm",
+      "date": "2012-04-30T02:15:12.356Z",
       "reminder": false
     }
   ]

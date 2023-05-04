@@ -6,6 +6,7 @@
       formControlName="text"
       id="text"
       placeholder="Add Task"
+      maxlength="300"
     />
   </div>
   <div class="date-time">
@@ -16,10 +17,10 @@
           type="text"
           formControlName="day"
           id="datepicker"
-          [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY'}"
+          [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
           placeholder="Click to Select Date"
           bsDatepicker
-          (bsValueChange)="onValueChange($event)"
+          [minDate]="bsValue"
         />
       </div>
     </div>
