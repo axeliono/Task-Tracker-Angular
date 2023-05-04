@@ -3,6 +3,7 @@ import { Task } from '../Models/Task';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 //of is no longer necessary because the HttpClient returns an observable. No need to use of to convert to observable object.
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -12,7 +13,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'https://localhost:7091/api/TaskItems';
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
