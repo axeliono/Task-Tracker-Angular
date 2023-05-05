@@ -84,7 +84,12 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://axeliono.github.io/Task-Tracker-Angular/",
+            "name": "Task-Tracker-Angular",
+            "email": "chandlergreen1997@gmail.com"
+          }
         }
       }
     }
