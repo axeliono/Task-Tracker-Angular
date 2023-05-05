@@ -14,7 +14,6 @@ import {
 } from '@angular/forms';
 import { Renderer2, RendererFactory2 } from '@angular/core';
 import { Task } from '../../Models/Task';
-
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -25,7 +24,6 @@ export class AddTaskComponent implements OnInit {
   day: Date = new Date();
   time: Date = new Date();
   bsValue = new Date();
-
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter<Task>();
 
   constructor(

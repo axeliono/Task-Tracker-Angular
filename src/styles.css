@@ -74,3 +74,19 @@ body {
   flex: 2;
   height: 20px;
 }
+
+.bs-datepicker-container {
+  background-color: lightcoral;
+}
+
+.bs-datepicker-body {
+  background-color: #fff;
+}
+
+.bs-datepicker-head {
+  background-color: white;
+}
+
+.bs-datepicker-head button {
+  background-color: lightcoral;
+}

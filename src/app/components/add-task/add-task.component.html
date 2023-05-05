@@ -17,10 +17,14 @@
           type="text"
           formControlName="day"
           id="datepicker"
-          [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+          [bsConfig]="{
+            dateInputFormat: 'DD-MM-YYYY',
+            containerClass: '.bs-datepicker-container'
+          }"
           placeholder="Click to Select Date"
           bsDatepicker
           [minDate]="bsValue"
+          autocomplete="off"
         />
       </div>
     </div>

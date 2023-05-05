@@ -6,3 +6,7 @@
 .date {
   margin-right: 10px;
 }
+
+.date-form:hover {
+  cursor: grab;
+}
