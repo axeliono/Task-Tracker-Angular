@@ -14,7 +14,6 @@ export class TasksComponent {
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
-      this.sortByTime(this.tasks);
     });
   }
   deleteTask(task: Task) {
@@ -22,7 +21,7 @@ export class TasksComponent {
       var x = this.tasks.filter((t) => {
         return t.id != task.id;
       });
-      this.sortByTime(x);
+      this.tasks = x;
     });
   }
 
@@ -34,7 +33,6 @@ export class TasksComponent {
     this.taskService.addTask(task).subscribe(() => {
       task.id = this.tasks.length + 1;
       this.tasks.push(task);
-      this.sortByTime(this.tasks);
     });
   }
 

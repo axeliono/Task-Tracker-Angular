@@ -56,7 +56,10 @@ export class AddTaskComponent implements OnInit {
     const newTask = {
       text: this.taskForm.value.text.trim(),
       date: day,
-      reminder: this.taskForm.value.reminder,
+      reminder:
+        this.taskForm.value.reminder == null
+          ? false
+          : this.taskForm.value.reminder,
     };
 
     this.onAddTask.emit(newTask);
